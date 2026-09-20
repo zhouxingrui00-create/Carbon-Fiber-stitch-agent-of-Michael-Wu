@@ -1,0 +1,30 @@
+[
+  {
+    "document_id": "D1",
+    "original_filename": "调研报告与技术报告20260806(2).docx",
+    "sha256": "f97ccd33c4afa780aa76ec441c5d8454e6229cc8b6addd4996f1b9812f04853b",
+    "byte_size": 16284500,
+    "extraction": "python-docx: main-body paragraphs and tables in document order; no OCR",
+    "limitations": [
+      "不包含嵌入图片中的文字、图形和尺寸标注。",
+      "DOCX 不具有稳定页码；正文块 ID 是定位锚点，不冒充原文页码。",
+      "本文档中的技术数值是资料陈述，不代表完成实测验收。"
+    ],
+    "inline_shape_count": 46,
+    "block_count": 255
+  },
+  {
+    "document_id": "D2",
+    "original_filename": "碳纤维复合材料缝合技术类型与关键参数(2).docx",
+    "sha256": "b4e2b13767b3ca2c61fb07c751e3649b2d2043eb2ff62858bbdce62b483701c3",
+    "byte_size": 54318,
+    "extraction": "python-docx: main-body paragraphs and tables in document order; no OCR",
+    "limitations": [
+      "不包含嵌入图片中的文字、图形和尺寸标注。",
+      "DOCX 不具有稳定页码；正文块 ID 是定位锚点，不冒充原文页码。",
+      "本文档中的技术数值是资料陈述，不代表完成实测验收。"
+    ],
+    "inline_shape_count": 0,
+    "block_count": 55
+  }
+]
