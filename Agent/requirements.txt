@@ -1,0 +1,5 @@
+# Stages 1-4 direct dependencies; full resolved environment: requirements-lock.txt
+streamlit==1.64.0
+pydantic==2.13.5
+PyYAML==6.0.3
+pytest==9.1.1
