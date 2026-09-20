@@ -1,0 +1,8 @@
+﻿source_group_label,stitch_mechanism,pitch_mm,row_spacing_mm,purpose_zh,status,independent_preform_count,replicates_per_test,measurements,thickness_background_min_mm,thickness_background_max_mm,needle_diameter_mm,yarn_feed_tension_N,stitch_frequency_spm,line_speed_m_min,method_or_standard,source_document_id,source_block_id,source_file_sha256
+C0,unstitched,,,基准对照组,planned,,,[],20,25,,,,,,D2,D2:t006,b4e2b13767b3ca2c61fb07c751e3649b2d2043eb2ff62858bbdce62b483701c3
+L1,lockstitch,5,5,高密度锁式,planned,,,[],20,25,,,,,,D2,D2:t006,b4e2b13767b3ca2c61fb07c751e3649b2d2043eb2ff62858bbdce62b483701c3
+L2,lockstitch,5,10,中密度锁式,planned,,,[],20,25,,,,,,D2,D2:t006,b4e2b13767b3ca2c61fb07c751e3649b2d2043eb2ff62858bbdce62b483701c3
+L3,lockstitch,10,10,低密度锁式,planned,,,[],20,25,,,,,,D2,D2:t006,b4e2b13767b3ca2c61fb07c751e3649b2d2043eb2ff62858bbdce62b483701c3
+C1,chainstitch,5,5,高密度链式,planned,,,[],20,25,,,,,,D2,D2:t006,b4e2b13767b3ca2c61fb07c751e3649b2d2043eb2ff62858bbdce62b483701c3
+C2,chainstitch,5,10,中密度链式,planned,,,[],20,25,,,,,,D2,D2:t006,b4e2b13767b3ca2c61fb07c751e3649b2d2043eb2ff62858bbdce62b483701c3
+C3,chainstitch,10,10,低密度链式,planned,,,[],20,25,,,,,,D2,D2:t006,b4e2b13767b3ca2c61fb07c751e3649b2d2043eb2ff62858bbdce62b483701c3

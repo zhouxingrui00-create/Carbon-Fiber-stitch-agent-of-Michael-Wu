@@ -1,0 +1,631 @@
+schema_version: '1.0'
+purpose: 领域种子规格，不是已经实现的软件配置接口；Codex可迁移结构但不得更改语义与数值。
+policy:
+  all_records_are_real_measurements: false
+  default_promote_to_hard_limits: false
+  default_execute_on_equipment: false
+  research_window_is_safety_guarantee: false
+  unknown_is_zero: false
+  source_images_transcribed: false
+records:
+- record_id: D2-P
+  field: pitch_mm
+  label_zh: 沿缝合路径针距 p
+  unit: mm
+  role: design_variable
+  scope: general_research
+  evidence_kind: initial_trial_window
+  verification_status: source_only
+  enforcement: advisory
+  source_refs:
+  - document_id: D2
+    file_sha256: b4e2b13767b3ca2c61fb07c751e3649b2d2043eb2ff62858bbdce62b483701c3
+    section: 四、关键工艺参数
+    rendered_page_hint: 5
+    block_id: D2:t002
+    excerpt: 针距 p：3–15 mm；典型 5、10 mm
+  min: 3
+  max: 15
+  examples:
+  - 5
+  - 10
+- record_id: D2-S
+  field: row_spacing_mm
+  label_zh: 相邻缝合行距 s
+  unit: mm
+  role: design_variable
+  scope: general_research
+  evidence_kind: initial_trial_window
+  verification_status: source_only
+  enforcement: advisory
+  source_refs:
+  - document_id: D2
+    file_sha256: b4e2b13767b3ca2c61fb07c751e3649b2d2043eb2ff62858bbdce62b483701c3
+    section: 四、关键工艺参数
+    rendered_page_hint: 5
+    block_id: D2:t002
+    excerpt: 行距 s：5–20 mm；典型 5、10 mm
+  min: 5
+  max: 20
+  examples:
+  - 5
+  - 10
+- record_id: D2-H
+  field: compacted_thickness_mm
+  label_zh: 预制体厚度
+  unit: mm
+  role: context
+  scope: general_research
+  evidence_kind: descriptive_ranges
+  verification_status: source_only
+  enforcement: advisory
+  source_refs:
+  - document_id: D2
+    file_sha256: b4e2b13767b3ca2c61fb07c751e3649b2d2043eb2ff62858bbdce62b483701c3
+    section: 四、关键工艺参数
+    rendered_page_hint: 5
+    block_id: D2:t002
+    excerpt: 薄件约 1–5 mm；厚件约 10–30 mm
+  ranges:
+  - label: thin_example
+    min: 1
+    max: 5
+  - label: thick_example
+    min: 10
+    max: 30
+  note: 厚度测量/压实条件必须记录；文档未声明5–10 mm禁用。
+- record_id: D2-T
+  field: yarn_feed_tension_N
+  label_zh: 供纱张力
+  unit: N
+  role: design_variable
+  scope: general_yarn_exploration
+  evidence_kind: initial_trial_window
+  verification_status: source_only
+  enforcement: advisory
+  source_refs:
+  - document_id: D2
+    file_sha256: b4e2b13767b3ca2c61fb07c751e3649b2d2043eb2ff62858bbdce62b483701c3
+    section: 四、关键工艺参数
+    rendered_page_hint: 5
+    block_id: D2:t002
+    excerpt: 初始探索 0.5–10 N
+  min: 0.5
+  max: 10
+  note: 设定值与实测值分列，并记录张力测量位置。
+- record_id: D2-T-FINE
+  field: yarn_feed_tension_N
+  label_zh: 细纱低损伤供纱张力
+  unit: N
+  role: design_variable
+  scope: fine_yarn_low_damage_exploration
+  evidence_kind: initial_trial_window
+  verification_status: source_only
+  enforcement: advisory
+  source_refs:
+  - document_id: D2
+    file_sha256: b4e2b13767b3ca2c61fb07c751e3649b2d2043eb2ff62858bbdce62b483701c3
+    section: 四、关键工艺参数
+    rendered_page_hint: 5
+    block_id: D2:t002
+    excerpt: 细纱低损伤探索 0.1–3 N
+  min: 0.1
+  max: 3
+  note: 独立子窗口，不合并为0.1–10 N通用安全区间。
+- record_id: D2-YARN
+  field: carbon_yarn_tow_K
+  label_zh: 碳纤维缝线规格示例
+  unit: K
+  role: design_variable
+  scope: carbon_yarn
+  evidence_kind: example_values
+  verification_status: source_only
+  enforcement: advisory
+  source_refs:
+  - document_id: D2
+    file_sha256: b4e2b13767b3ca2c61fb07c751e3649b2d2043eb2ff62858bbdce62b483701c3
+    section: 四、关键工艺参数
+    rendered_page_hint: 5
+    block_id: D2:t002
+    excerpt: 碳纤维可从 1K、3K 等开展试验
+  examples:
+  - 1
+  - 3
+  note: K值不是通用线密度；其他线材记录自己的规格和线密度。
+- record_id: D2-D
+  field: needle_diameter_mm
+  label_zh: 缝针直径
+  unit: mm
+  role: design_variable
+  scope: general_research
+  evidence_kind: initial_trial_window
+  verification_status: source_only
+  enforcement: advisory
+  source_refs:
+  - document_id: D2
+    file_sha256: b4e2b13767b3ca2c61fb07c751e3649b2d2043eb2ff62858bbdce62b483701c3
+    section: 四、关键工艺参数
+    rendered_page_hint: 5
+    block_id: D2:t002
+    excerpt: 约 0.6–2.0 mm（需匹配纱线）
+  min: 0.6
+  max: 2.0
+  requires:
+  - needle_thread_compatibility_review
+- record_id: D2-ANGLE
+  field: needle_normal_angle_deg
+  label_zh: 针轴与局部厚度法向夹角
+  unit: deg
+  role: design_variable
+  scope: general_research
+  evidence_kind: qualitative_guidance
+  verification_status: source_only
+  enforcement: advisory
+  source_refs:
+  - document_id: D2
+    file_sha256: b4e2b13767b3ca2c61fb07c751e3649b2d2043eb2ff62858bbdce62b483701c3
+    section: 四、关键工艺参数
+    rendered_page_hint: 5
+    block_id: D2:t002
+    excerpt: 通常沿局部厚度法向
+  min: null
+  max: null
+  note: 原文未给数值公差。0度仅可作为系统定义的理想法向，不是文档保证值。
+- record_id: D2-F
+  field: stitch_frequency_spm
+  label_zh: 缝合针频
+  unit: stitches/min
+  role: design_variable
+  scope: research_startup
+  evidence_kind: initial_trial_window
+  verification_status: source_only
+  enforcement: advisory
+  source_refs:
+  - document_id: D2
+    file_sha256: b4e2b13767b3ca2c61fb07c751e3649b2d2043eb2ff62858bbdce62b483701c3
+    section: 四、关键工艺参数
+    rendered_page_hint: 6
+    block_id: D2:t002
+    excerpt: 研发起步约 10–100 针/min
+  min: 10
+  max: 100
+  note: 不是机器最大针频，不意味着任一厚度/针线组合在区间内均可行。
+- record_id: D2-PIN
+  field: penetration_peak_force_N
+  label_zh: 穿刺峰值力
+  unit: N
+  role: measurement
+  scope: process_observation
+  evidence_kind: must_measure
+  verification_status: source_only
+  enforcement: advisory
+  source_refs:
+  - document_id: D2
+    file_sha256: b4e2b13767b3ca2c61fb07c751e3649b2d2043eb2ff62858bbdce62b483701c3
+    section: 四、关键工艺参数
+    rendered_page_hint: 6
+    block_id: D2:t002
+    excerpt: 穿刺力/拔针力：应实测，不宜套用统一定值
+  min: null
+  max: null
+  note: 力—位移曲线、速度及异常波动需关联原始文件。不得用作无测量输入的工艺前推荐特征。
+- record_id: D2-POUT
+  field: withdrawal_peak_force_N
+  label_zh: 拔针峰值力
+  unit: N
+  role: measurement
+  scope: process_observation
+  evidence_kind: must_measure
+  verification_status: source_only
+  enforcement: advisory
+  source_refs:
+  - document_id: D2
+    file_sha256: b4e2b13767b3ca2c61fb07c751e3649b2d2043eb2ff62858bbdce62b483701c3
+    section: 四、关键工艺参数
+    rendered_page_hint: 6
+    block_id: D2:t002
+    excerpt: 穿刺力/拔针力：应实测，不宜套用统一定值
+  min: null
+  max: null
+  note: 力—位移曲线、速度及异常波动需关联原始文件。不得用作无测量输入的工艺前推荐特征。
+- record_id: D2-V-P
+  field: pitch_mm
+  label_zh: V形接缝沿缝针距
+  unit: mm
+  role: design_variable
+  scope: v_splice
+  evidence_kind: initial_trial_window
+  verification_status: source_only
+  enforcement: advisory
+  source_refs:
+  - document_id: D2
+    file_sha256: b4e2b13767b3ca2c61fb07c751e3649b2d2043eb2ff62858bbdce62b483701c3
+    section: 六、不同应用的推荐工艺窗口
+    rendered_page_hint: 8
+    block_id: D2:t004
+    excerpt: V 形对接接缝：沿接缝 3–10 mm
+  min: 3
+  max: 10
+- record_id: D1-V-SWING
+  field: swing_span_mm
+  label_zh: 摆动跨距
+  unit: mm
+  role: design_variable
+  scope: v_splice
+  evidence_kind: design_parameter
+  verification_status: source_only
+  enforcement: advisory
+  source_refs:
+  - &id001
+    document_id: D1
+    file_sha256: f97ccd33c4afa780aa76ec441c5d8454e6229cc8b6addd4996f1b9812f04853b
+    section: 9.2.3 (4) V型缝合装置
+    rendered_page_hint: 49
+    block_id: D1:p0253
+  min: 5
+  max: 15
+  semantic_status: pending_amplitude_definition
+  note: 原文未明确单侧幅值/峰峰跨距；确认前不能生成真实针位。
+- record_id: D1-V-FMAX
+  field: max_stitch_frequency_spm
+  label_zh: 最高针频
+  unit: stitches/min
+  role: equipment_claim
+  scope: v_splice
+  evidence_kind: design_specification
+  verification_status: source_only
+  enforcement: advisory
+  source_refs:
+  - *id001
+  max: 800
+- record_id: D1-V-DEPTH
+  field: max_stitch_depth_mm
+  label_zh: 最大缝合深度
+  unit: mm
+  role: equipment_claim
+  scope: v_splice
+  evidence_kind: design_specification
+  verification_status: source_only
+  enforcement: advisory
+  source_refs:
+  - *id001
+  max: 6
+- record_id: D1-V-ERR
+  field: stitch_error_abs_mm
+  label_zh: 缝合精度绝对幅值
+  unit: mm
+  role: quality_target
+  scope: v_splice
+  evidence_kind: design_target
+  verification_status: source_only
+  enforcement: advisory
+  source_refs:
+  - *id001
+  max: 0.3
+  raw_value: ±0.3mm
+- record_id: D1-V-LIFT
+  field: max_foot_lift_mm
+  label_zh: 原文针脚最大提升高度
+  unit: mm
+  role: equipment_claim
+  scope: v_splice
+  evidence_kind: design_specification
+  verification_status: source_only
+  enforcement: advisory
+  source_refs:
+  - *id001
+  max: 20
+  semantic_status: confirm_component_name
+- record_id: D1-V-STRENGTH
+  field: seam_strength_retention_pct
+  label_zh: 缝合处相对原布料强度
+  unit: '%'
+  role: quality_target
+  scope: v_splice
+  evidence_kind: design_target
+  verification_status: source_only
+  enforcement: advisory
+  source_refs:
+  - document_id: D1
+    file_sha256: f97ccd33c4afa780aa76ec441c5d8454e6229cc8b6addd4996f1b9812f04853b
+    section: 9.2.5
+    rendered_page_hint: 54
+    block_id: D1:p0273
+  min: 70
+  note: 目标，不是测量值。需确认原布/缝合布及成型后构件的测试状态、方法和相同基准。
+- record_id: D1-V-X
+  field: travel_x_mm
+  label_zh: X方向最大往复行程
+  unit: mm
+  role: equipment_claim
+  scope: v_splice
+  evidence_kind: design_specification
+  verification_status: source_only
+  enforcement: advisory
+  source_refs:
+  - &id002
+    document_id: D1
+    file_sha256: f97ccd33c4afa780aa76ec441c5d8454e6229cc8b6addd4996f1b9812f04853b
+    section: 9.2.3 (3) X/Y运动模组
+    rendered_page_hint: 49
+    block_id: D1:p0251
+  max: 1100
+- record_id: D1-V-Y
+  field: travel_y_mm
+  label_zh: Y方向最大往复行程
+  unit: mm
+  role: equipment_claim
+  scope: v_splice
+  evidence_kind: design_specification
+  verification_status: source_only
+  enforcement: advisory
+  source_refs:
+  - *id002
+  max: 580
+- record_id: D1-V-REPEAT
+  field: repeatability_abs_mm
+  label_zh: 运动重复精度绝对幅值
+  unit: mm
+  role: equipment_claim
+  scope: v_splice
+  evidence_kind: design_specification
+  verification_status: source_only
+  enforcement: advisory
+  source_refs:
+  - *id002
+  max: 0.05
+- record_id: D1-J-FMAX
+  field: max_stitch_frequency_Hz
+  label_zh: 最高针频
+  unit: Hz
+  role: equipment_claim
+  scope: j_beam
+  evidence_kind: design_specification
+  verification_status: source_only
+  enforcement: advisory
+  source_refs:
+  - document_id: D1
+    file_sha256: f97ccd33c4afa780aa76ec441c5d8454e6229cc8b6addd4996f1b9812f04853b
+    section: 9.3.4
+    rendered_page_hint: 65
+    block_id: D1:p0351
+  max: 10
+  canonical_field: max_stitch_frequency_spm
+  canonical_max: 600
+  conversion: stitches/min = Hz * 60, assuming one stitch per cycle
+- record_id: D1-J-DEPTH
+  field: max_stitch_depth_mm
+  label_zh: 最大缝合深度
+  unit: mm
+  role: equipment_claim
+  scope: j_beam
+  evidence_kind: design_specification
+  verification_status: source_only
+  enforcement: advisory
+  source_refs:
+  - document_id: D1
+    file_sha256: f97ccd33c4afa780aa76ec441c5d8454e6229cc8b6addd4996f1b9812f04853b
+    section: 9.3.4
+    rendered_page_hint: 65
+    block_id: D1:p0352
+  max: 30
+- record_id: D1-J-DENSITY
+  field: linear_stitch_density_per_cm
+  label_zh: 原文缝合针密
+  unit: stitches/cm
+  role: design_variable
+  scope: j_beam
+  evidence_kind: design_requirement
+  verification_status: source_only
+  enforcement: advisory
+  source_refs:
+  - document_id: D1
+    file_sha256: f97ccd33c4afa780aa76ec441c5d8454e6229cc8b6addd4996f1b9812f04853b
+    section: 9.3.3
+    rendered_page_hint: 63
+    block_id: D1:p0335
+  min: 5
+  max: 15
+  semantic_status: pending_review
+  derived_pitch_range_mm:
+  - 0.6666666666666666
+  - 2.0
+  derivation: 仅假设均匀单排计数，p_mm=10/density_per_cm；保留方向反转的上下界。
+  note: 与D2通用针距窗口不同；不自动覆盖或取交集。
+- record_id: D1-J-ALIGN
+  field: seam_position_error_abs_mm
+  label_zh: 接缝位置误差
+  unit: mm
+  role: quality_target
+  scope: j_beam
+  evidence_kind: design_target
+  verification_status: source_only
+  enforcement: advisory
+  source_refs:
+  - document_id: D1
+    file_sha256: f97ccd33c4afa780aa76ec441c5d8454e6229cc8b6addd4996f1b9812f04853b
+    section: 9.3.3
+    rendered_page_hint: 63
+    block_id: D1:p0334
+  max: 0.5
+- record_id: D1-J-TENSION
+  field: fabric_tension_fluctuation_abs_N
+  label_zh: 布料张力波动绝对幅值
+  unit: N
+  role: quality_target
+  scope: j_beam
+  evidence_kind: design_target
+  verification_status: source_only
+  enforcement: advisory
+  source_refs:
+  - document_id: D1
+    file_sha256: f97ccd33c4afa780aa76ec441c5d8454e6229cc8b6addd4996f1b9812f04853b
+    section: 9.3.3
+    rendered_page_hint: 63
+    block_id: D1:p0336
+  max: 5
+  note: 布料张力，不是供纱张力绝对设定值。
+- record_id: D1-DUAL-T
+  field: fabric_web_tension_N
+  label_zh: 布面输送张力初始范围
+  unit: N
+  role: design_variable
+  scope: dual_layer_fixation
+  evidence_kind: initial_trial_window
+  verification_status: source_only
+  enforcement: advisory
+  source_refs:
+  - document_id: D1
+    file_sha256: f97ccd33c4afa780aa76ec441c5d8454e6229cc8b6addd4996f1b9812f04853b
+    section: 9.1.3 (3)
+    rendered_page_hint: 30
+    block_id: D1:p0137
+  min: 20
+  max: 80
+  instances:
+  - upper
+  - lower
+- record_id: D1-DUAL-P
+  field: pitch_mm
+  label_zh: 固定工艺针距
+  unit: mm
+  role: design_variable
+  scope: dual_layer_fixation
+  evidence_kind: initial_trial_window
+  verification_status: source_only
+  enforcement: advisory
+  source_refs:
+  - &id003
+    document_id: D1
+    file_sha256: f97ccd33c4afa780aa76ec441c5d8454e6229cc8b6addd4996f1b9812f04853b
+    section: 9.1.4 (3)
+    rendered_page_hint: 38
+    block_id: D1:p0168
+  min: 10
+  max: 30
+  note: 独立工程场景窗口，不被D2通用初始窗口强制截断。
+- record_id: D1-DUAL-F
+  field: stitch_frequency_spm
+  label_zh: 固定工艺初始针频
+  unit: stitches/min
+  role: design_variable
+  scope: dual_layer_fixation
+  evidence_kind: initial_trial_window
+  verification_status: source_only
+  enforcement: advisory
+  source_refs:
+  - *id003
+  min: 100
+  max: 500
+- record_id: D1-DUAL-SPACING
+  field: mechanical_needle_spacing_mm
+  label_zh: 原文多针针距
+  unit: mm
+  role: equipment_setting
+  scope: dual_layer_fixation
+  evidence_kind: design_parameter
+  verification_status: source_only
+  enforcement: advisory
+  source_refs:
+  - document_id: D1
+    file_sha256: f97ccd33c4afa780aa76ec441c5d8454e6229cc8b6addd4996f1b9812f04853b
+    section: 9.1.3 (6)
+    rendered_page_hint: 33
+    block_id: D1:p0147
+  examples:
+  - 100
+  - 120
+  - 200
+  semantic_status: pending_orientation_and_head_layout
+  note: 独立于沿路径p和增强行距s；不能未经核实认定其完整机械含义。
+- record_id: D1-DUAL-ALIGN
+  field: layer_misalignment_abs_mm
+  label_zh: 上下层错位目标
+  unit: mm
+  role: quality_target
+  scope: dual_layer_fixation
+  evidence_kind: design_target
+  verification_status: source_only
+  enforcement: advisory
+  source_refs:
+  - document_id: D1
+    file_sha256: f97ccd33c4afa780aa76ec441c5d8454e6229cc8b6addd4996f1b9812f04853b
+    section: 9.1.1
+    rendered_page_hint: 26
+    block_id: D1:p0120
+  max: 0.5
+- record_id: D1-DUAL-H5
+  field: total_thickness_mm
+  label_zh: 9.1.1双层缝合总厚度
+  unit: mm
+  role: equipment_claim
+  scope: dual_layer_fixation
+  evidence_kind: design_specification
+  verification_status: source_only
+  enforcement: advisory
+  source_refs:
+  - document_id: D1
+    file_sha256: f97ccd33c4afa780aa76ec441c5d8454e6229cc8b6addd4996f1b9812f04853b
+    section: 9.1.1
+    rendered_page_hint: 26
+    block_id: D1:p0120
+  max: 5
+  conflict_group: dual_thickness
+- record_id: D1-DUAL-H6
+  field: total_thickness_mm
+  label_zh: 9.1.7双层总厚度
+  unit: mm
+  role: equipment_claim
+  scope: dual_layer_fixation
+  evidence_kind: design_specification
+  verification_status: source_only
+  enforcement: advisory
+  source_refs:
+  - document_id: D1
+    file_sha256: f97ccd33c4afa780aa76ec441c5d8454e6229cc8b6addd4996f1b9812f04853b
+    section: 9.1.7
+    rendered_page_hint: 42
+    block_id: D1:p0188
+  max: 6
+  conflict_group: dual_thickness
+unit_rules:
+  frequency: Hz * 60 = stitches/min, one stitch per cycle must be confirmed
+  tension: N 与 cN、gf 需显式换算；不可混同张力测量对象
+  geometry: 存储规范单位 mm；原始值、原始单位不丢弃
+formulas:
+- id: rectangular_puncture_density
+  expression: 1000000/(pitch_mm*row_spacing_mm)
+  output_unit: points/m^2
+  source_refs:
+  - document_id: D2
+    file_sha256: b4e2b13767b3ca2c61fb07c751e3649b2d2043eb2ff62858bbdce62b483701c3
+    section: 五、缝合密度与结构设计
+    rendered_page_hint: 7
+    block_id: D2:p0032
+  guards:
+  - p>0 and s>0
+  - rectangular lattice
+  - one puncture per cell
+  - extra punctures and finite-edge effects excluded
+- id: ideal_straight_feed
+  expression: pitch_mm*stitch_frequency_spm/1000
+  output_unit: m/min
+  basis: 本次设计的运动学推导，不是D2直接给出的公式
+  guards:
+  - straight feed
+  - one stitch per cycle
+  - p is actual feed per stitch
+  - no extra pattern/return stitches
+  - ideal synchronization
+system_fields_without_source_numeric_limits:
+- needle_thread_compatibility
+- V_angle_deg
+- splice_gap_mm
+- edge_distance_mm
+- R_radius_mm
+- TCP_calibration_error_mm
+- fixture_clearance_mm
+- presser_force_N
+- permitted_in_plane_loss_pct
+- permitted_porosity_pct
+- model_validation_thresholds

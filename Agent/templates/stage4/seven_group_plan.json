@@ -1,0 +1,195 @@
+{
+  "plan_id": "D2_THICK_PREFORM_LOCK_CHAIN_DRAFT",
+  "title": "D2 七组待实验计划",
+  "namespace": "real",
+  "created_at": "2026-09-20T06:39:36.862161Z",
+  "status": "planned",
+  "template_id": "D2_THICK_PREFORM_LOCK_CHAIN",
+  "source_refs": [
+    {
+      "document_id": "D2",
+      "file_sha256": "b4e2b13767b3ca2c61fb07c751e3649b2d2043eb2ff62858bbdce62b483701c3",
+      "section": "八、研发试验方案建议 1.基础试验矩阵",
+      "rendered_page_hint": 11,
+      "block_id": "D2:t006"
+    }
+  ],
+  "source_snapshot_hash": "f7b058a6bda381e5d069875738d8dd49290b58a8c98f9df2c8cf4c257c94e3f6",
+  "source_extraction_sha256": "0285d24703911176dba4c3bd72ae6253bdf107f61d4db1e9e45d6ab357aa832a",
+  "source_text": "组别\t缝合类型\t针距 p\t行距 s\t用途\nC0\t未缝合\t—\t—\t基准对照组\nL1\t锁式\t5 mm\t5 mm\t高密度锁式\nL2\t锁式\t5 mm\t10 mm\t中密度锁式\nL3\t锁式\t10 mm\t10 mm\t低密度锁式\nC1\t链式\t5 mm\t5 mm\t高密度链式\nC2\t链式\t5 mm\t10 mm\t中密度链式\nC3\t链式\t10 mm\t10 mm\t低密度链式",
+  "applicability": {
+    "thickness_example_mm": [
+      20,
+      25
+    ],
+    "requires": [
+      "compatible equipment for selected thickness and mechanisms",
+      "same yarn material",
+      "same layup",
+      "same compaction",
+      "same forming and post-treatment",
+      "matched unstitched controls",
+      "researcher approves repetition and test plan"
+    ]
+  },
+  "groups": [
+    {
+      "source_group_label": "C0",
+      "stitch_mechanism": "unstitched",
+      "pitch_mm": null,
+      "row_spacing_mm": null,
+      "purpose_zh": "基准对照组",
+      "status": "planned",
+      "independent_preform_count": null,
+      "replicates_per_test": null,
+      "measurements": []
+    },
+    {
+      "source_group_label": "L1",
+      "stitch_mechanism": "lockstitch",
+      "pitch_mm": 5,
+      "row_spacing_mm": 5,
+      "purpose_zh": "高密度锁式",
+      "status": "planned",
+      "independent_preform_count": null,
+      "replicates_per_test": null,
+      "measurements": []
+    },
+    {
+      "source_group_label": "L2",
+      "stitch_mechanism": "lockstitch",
+      "pitch_mm": 5,
+      "row_spacing_mm": 10,
+      "purpose_zh": "中密度锁式",
+      "status": "planned",
+      "independent_preform_count": null,
+      "replicates_per_test": null,
+      "measurements": []
+    },
+    {
+      "source_group_label": "L3",
+      "stitch_mechanism": "lockstitch",
+      "pitch_mm": 10,
+      "row_spacing_mm": 10,
+      "purpose_zh": "低密度锁式",
+      "status": "planned",
+      "independent_preform_count": null,
+      "replicates_per_test": null,
+      "measurements": []
+    },
+    {
+      "source_group_label": "C1",
+      "stitch_mechanism": "chainstitch",
+      "pitch_mm": 5,
+      "row_spacing_mm": 5,
+      "purpose_zh": "高密度链式",
+      "status": "planned",
+      "independent_preform_count": null,
+      "replicates_per_test": null,
+      "measurements": []
+    },
+    {
+      "source_group_label": "C2",
+      "stitch_mechanism": "chainstitch",
+      "pitch_mm": 5,
+      "row_spacing_mm": 10,
+      "purpose_zh": "中密度链式",
+      "status": "planned",
+      "independent_preform_count": null,
+      "replicates_per_test": null,
+      "measurements": []
+    },
+    {
+      "source_group_label": "C3",
+      "stitch_mechanism": "chainstitch",
+      "pitch_mm": 10,
+      "row_spacing_mm": 10,
+      "purpose_zh": "低密度链式",
+      "status": "planned",
+      "independent_preform_count": null,
+      "replicates_per_test": null,
+      "measurements": []
+    }
+  ],
+  "warning": "7个方案组，不是7条实测记录；不得直接训练，也不自动适用于6mm最大深度的设备。",
+  "additional_research_design_suggestions": {
+    "basis": "本次设计建议，不是原文已确定试验条件",
+    "randomization_seed": null,
+    "block_variable": null,
+    "pilot_needle_thread_screening_first": true,
+    "vary_primary_factors": [
+      "stitch_mechanism",
+      "pitch_mm",
+      "row_spacing_mm"
+    ],
+    "fix_other_process_parameters_after_pilot": true,
+    "do_not_autofill_unprovided_conditions": true
+  },
+  "pending_conditions": {
+    "material_system": null,
+    "material_batch": null,
+    "roll_id": null,
+    "yarn_material": null,
+    "layup": null,
+    "compaction": null,
+    "thickness_measurement_condition": null,
+    "forming_conditions": null,
+    "post_treatment_conditions": null,
+    "matched_control_criteria": null,
+    "independent_preform_count": null,
+    "replicates_per_test": null,
+    "needle_diameter_mm": null,
+    "yarn_feed_tension_N": null,
+    "stitch_frequency_spm": null,
+    "line_speed_m_min": null,
+    "method_or_standard": null,
+    "loading_direction": null,
+    "equipment_id": null,
+    "randomization_seed": null,
+    "block_variable": null
+  },
+  "missing_fields": [
+    "material_system",
+    "material_batch",
+    "roll_id",
+    "yarn_material",
+    "layup",
+    "compaction",
+    "thickness_measurement_condition",
+    "forming_conditions",
+    "post_treatment_conditions",
+    "matched_control_criteria",
+    "independent_preform_count",
+    "replicates_per_test",
+    "needle_diameter_mm",
+    "yarn_feed_tension_N",
+    "stitch_frequency_spm",
+    "line_speed_m_min",
+    "method_or_standard",
+    "loading_direction",
+    "equipment_id",
+    "randomization_seed",
+    "block_variable"
+  ],
+  "stepwise_plan": [
+    {
+      "step": 1,
+      "title": "低速穿刺与针线匹配筛查",
+      "description": "先确认设备厚度与机构，再由研究者确定低速筛查条件、针线组合和观测方案；不自动填针频或重复数。"
+    },
+    {
+      "step": 2,
+      "title": "固定其余条件，比较机制与 p/s",
+      "description": "筛查后固定针径、供纱张力、速度及材料/铺层/压实/成型后处理；保留 C0 匹配对照，确认独立制样数、重复数与测试方法后再执行。"
+    },
+    {
+      "step": 3,
+      "title": "记录真实运行与试样结果",
+      "description": "实验实际发生后再建立运行、父预制体与试样，关联原始文件和测量；本计划不生成试样或标签。"
+    }
+  ],
+  "measurements": [],
+  "executable": false,
+  "training_eligible": false,
+  "material_matching_requirement": "各组材料体系与来源需匹配；纱线、铺层、压实、成型及后处理条件保持一致；C0 对照匹配。"
+}
